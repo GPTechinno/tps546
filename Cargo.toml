@@ -1,0 +1,18 @@
+[package]
+name = "tps546"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.1"
+description = "Async, no_std driver for the TPS546D24A stackable PMBus buck converter"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/GPTechinno/tps546"
+documentation = "https://docs.rs/tps546"
+readme = "README.md"
+keywords = ["tps546", "pmbus", "embedded", "i2c", "no-std"]
+categories = ["embedded", "no-std", "hardware-support"]
+
+[dependencies]
+bitflags = "2"
+embedded-hal-async = "1.0"
+heapless = "0.8"
+pmbus-adapter = "0.1"

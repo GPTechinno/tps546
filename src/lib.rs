@@ -229,11 +229,13 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_vout_command(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_command).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_command)
+            .await
     }
 
     pub async fn set_vout_command(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_command).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_command)
+            .await
     }
 
     pub async fn get_vout_trim(&mut self) -> Result<f32, BUS::Error> {
@@ -241,7 +243,8 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn set_vout_trim(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_trim).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_trim)
+            .await
     }
 
     pub async fn get_vout_max(&mut self) -> Result<f32, BUS::Error> {
@@ -253,19 +256,23 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_vout_margin_high(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_margin_high).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_margin_high)
+            .await
     }
 
     pub async fn set_vout_margin_high(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_margin_high).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_margin_high)
+            .await
     }
 
     pub async fn get_vout_margin_low(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_margin_low).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_margin_low)
+            .await
     }
 
     pub async fn set_vout_margin_low(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_margin_low).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_margin_low)
+            .await
     }
 
     pub async fn get_vout_min(&mut self) -> Result<f32, BUS::Error> {
@@ -277,35 +284,43 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_vout_ov_fault_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_ov_fault_limit).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_ov_fault_limit)
+            .await
     }
 
     pub async fn set_vout_ov_fault_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_ov_fault_limit).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_ov_fault_limit)
+            .await
     }
 
     pub async fn get_vout_ov_warn_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_ov_warn_limit).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_ov_warn_limit)
+            .await
     }
 
     pub async fn set_vout_ov_warn_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_ov_warn_limit).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_ov_warn_limit)
+            .await
     }
 
     pub async fn get_vout_uv_warn_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_uv_warn_limit).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_uv_warn_limit)
+            .await
     }
 
     pub async fn set_vout_uv_warn_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_uv_warn_limit).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_uv_warn_limit)
+            .await
     }
 
     pub async fn get_vout_uv_fault_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_ulinear16_word(PmbusAdaptor::get_vout_uv_fault_limit).await
+        self.get_ulinear16_word(PmbusAdaptor::get_vout_uv_fault_limit)
+            .await
     }
 
     pub async fn set_vout_uv_fault_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_uv_fault_limit).await
+        self.set_ulinear16_word(v, PmbusAdaptor::set_vout_uv_fault_limit)
+            .await
     }
 
     // ULinear16 read-only
@@ -337,27 +352,33 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_vout_transition_rate(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_vout_transition_rate).await
+        self.get_linear11_word(PmbusAdaptor::get_vout_transition_rate)
+            .await
     }
 
     pub async fn set_vout_transition_rate(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_vout_transition_rate).await
+        self.set_linear11_word(v, PmbusAdaptor::set_vout_transition_rate)
+            .await
     }
 
     pub async fn get_vout_scale_loop(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_vout_scale_loop).await
+        self.get_linear11_word(PmbusAdaptor::get_vout_scale_loop)
+            .await
     }
 
     pub async fn set_vout_scale_loop(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_vout_scale_loop).await
+        self.set_linear11_word(v, PmbusAdaptor::set_vout_scale_loop)
+            .await
     }
 
     pub async fn get_frequency_switch(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_frequency_switch).await
+        self.get_linear11_word(PmbusAdaptor::get_frequency_switch)
+            .await
     }
 
     pub async fn set_frequency_switch(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_frequency_switch).await
+        self.set_linear11_word(v, PmbusAdaptor::set_frequency_switch)
+            .await
     }
 
     pub async fn get_vin_on(&mut self) -> Result<f32, BUS::Error> {
@@ -377,67 +398,83 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_iout_cal_gain(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_iout_cal_gain).await
+        self.get_linear11_word(PmbusAdaptor::get_iout_cal_gain)
+            .await
     }
 
     pub async fn set_iout_cal_gain(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_iout_cal_gain).await
+        self.set_linear11_word(v, PmbusAdaptor::set_iout_cal_gain)
+            .await
     }
 
     pub async fn get_iout_cal_offset(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_iout_cal_offset).await
+        self.get_linear11_word(PmbusAdaptor::get_iout_cal_offset)
+            .await
     }
 
     pub async fn set_iout_cal_offset(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_iout_cal_offset).await
+        self.set_linear11_word(v, PmbusAdaptor::set_iout_cal_offset)
+            .await
     }
 
     pub async fn get_iout_oc_fault_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_iout_oc_fault_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_iout_oc_fault_limit)
+            .await
     }
 
     pub async fn set_iout_oc_fault_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_iout_oc_fault_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_iout_oc_fault_limit)
+            .await
     }
 
     pub async fn get_iout_oc_warn_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_iout_oc_warn_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_iout_oc_warn_limit)
+            .await
     }
 
     pub async fn set_iout_oc_warn_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_iout_oc_warn_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_iout_oc_warn_limit)
+            .await
     }
 
     pub async fn get_ot_fault_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_ot_fault_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_ot_fault_limit)
+            .await
     }
 
     pub async fn set_ot_fault_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_ot_fault_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_ot_fault_limit)
+            .await
     }
 
     pub async fn get_ot_warn_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_ot_warn_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_ot_warn_limit)
+            .await
     }
 
     pub async fn set_ot_warn_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_ot_warn_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_ot_warn_limit)
+            .await
     }
 
     pub async fn get_vin_ov_fault_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_vin_ov_fault_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_vin_ov_fault_limit)
+            .await
     }
 
     pub async fn set_vin_ov_fault_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_vin_ov_fault_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_vin_ov_fault_limit)
+            .await
     }
 
     pub async fn get_vin_uv_warn_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_vin_uv_warn_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_vin_uv_warn_limit)
+            .await
     }
 
     pub async fn set_vin_uv_warn_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_vin_uv_warn_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_vin_uv_warn_limit)
+            .await
     }
 
     pub async fn get_ton_delay(&mut self) -> Result<f32, BUS::Error> {
@@ -457,11 +494,13 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_ton_max_fault_limit(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::get_ton_max_fault_limit).await
+        self.get_linear11_word(PmbusAdaptor::get_ton_max_fault_limit)
+            .await
     }
 
     pub async fn set_ton_max_fault_limit(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_ton_max_fault_limit).await
+        self.set_linear11_word(v, PmbusAdaptor::set_ton_max_fault_limit)
+            .await
     }
 
     pub async fn get_toff_delay(&mut self) -> Result<f32, BUS::Error> {
@@ -469,7 +508,8 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn set_toff_delay(&mut self, v: f32) -> Result<(), BUS::Error> {
-        self.set_linear11_word(v, PmbusAdaptor::set_toff_delay).await
+        self.set_linear11_word(v, PmbusAdaptor::set_toff_delay)
+            .await
     }
 
     pub async fn get_toff_fall(&mut self) -> Result<f32, BUS::Error> {
@@ -490,7 +530,8 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn read_temperature(&mut self) -> Result<f32, BUS::Error> {
-        self.get_linear11_word(PmbusAdaptor::read_temperature_1).await
+        self.get_linear11_word(PmbusAdaptor::read_temperature_1)
+            .await
     }
 
     // -----------------------------------------------------------------------
@@ -506,7 +547,9 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn get_smbalert_mask(&mut self, status_register: u8) -> Result<u8, BUS::Error> {
-        self.pmbus.get_smbalert_mask(self.addr, status_register).await
+        self.pmbus
+            .get_smbalert_mask(self.addr, status_register)
+            .await
     }
 
     pub async fn set_smbalert_mask(&mut self, data: u16) -> Result<(), BUS::Error> {
@@ -604,7 +647,10 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
 
     // TelemetryConfig (D0h, block 6B)
     pub async fn get_telemetry_config(&mut self) -> Result<TelemetryConfig, BUS::Error> {
-        let data = self.pmbus.raw_block_read(self.addr, CMD_TELEMETRY_CONFIG).await?;
+        let data = self
+            .pmbus
+            .raw_block_read(self.addr, CMD_TELEMETRY_CONFIG)
+            .await?;
         let mut buf = [0u8; 6];
         let len = data.len().min(6);
         buf[..len].copy_from_slice(&data[..len]);
@@ -613,7 +659,9 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
 
     pub async fn set_telemetry_config(&mut self, cfg: TelemetryConfig) -> Result<(), BUS::Error> {
         let bytes = cfg.to_bytes();
-        self.pmbus.raw_block_write(self.addr, CMD_TELEMETRY_CONFIG, &bytes).await
+        self.pmbus
+            .raw_block_write(self.addr, CMD_TELEMETRY_CONFIG, &bytes)
+            .await
     }
 
     // ReadAll (DAh, block 14B, read-only)
@@ -636,12 +684,17 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
 
     // StatusPhase (DCh, word)
     pub async fn get_status_phase(&mut self) -> Result<StatusPhase, BUS::Error> {
-        let raw = self.pmbus.raw_read_word(self.addr, CMD_STATUS_PHASE).await?;
+        let raw = self
+            .pmbus
+            .raw_read_word(self.addr, CMD_STATUS_PHASE)
+            .await?;
         Ok(StatusPhase::from_raw(raw))
     }
 
     pub async fn set_status_phase(&mut self, val: StatusPhase) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_word(self.addr, CMD_STATUS_PHASE, val.to_raw()).await
+        self.pmbus
+            .raw_write_word(self.addr, CMD_STATUS_PHASE, val.to_raw())
+            .await
     }
 
     // SyncConfig (E4h, byte)
@@ -651,47 +704,72 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
     }
 
     pub async fn set_sync_config(&mut self, cfg: SyncConfig) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_byte(self.addr, CMD_SYNC_CONFIG, cfg.to_raw()).await
+        self.pmbus
+            .raw_write_byte(self.addr, CMD_SYNC_CONFIG, cfg.to_raw())
+            .await
     }
 
     // StackConfig (ECh, word)
     pub async fn get_stack_config(&mut self) -> Result<StackConfig, BUS::Error> {
-        let raw = self.pmbus.raw_read_word(self.addr, CMD_STACK_CONFIG).await?;
+        let raw = self
+            .pmbus
+            .raw_read_word(self.addr, CMD_STACK_CONFIG)
+            .await?;
         Ok(StackConfig::from_raw(raw))
     }
 
     pub async fn set_stack_config(&mut self, cfg: StackConfig) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_word(self.addr, CMD_STACK_CONFIG, cfg.to_raw()).await
+        self.pmbus
+            .raw_write_word(self.addr, CMD_STACK_CONFIG, cfg.to_raw())
+            .await
     }
 
     // MiscOptions (EDh, word)
     pub async fn get_misc_options(&mut self) -> Result<MiscOptions, BUS::Error> {
-        let raw = self.pmbus.raw_read_word(self.addr, CMD_MISC_OPTIONS).await?;
+        let raw = self
+            .pmbus
+            .raw_read_word(self.addr, CMD_MISC_OPTIONS)
+            .await?;
         Ok(MiscOptions::from_raw(raw))
     }
 
     pub async fn set_misc_options(&mut self, opts: MiscOptions) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_word(self.addr, CMD_MISC_OPTIONS, opts.to_raw()).await
+        self.pmbus
+            .raw_write_word(self.addr, CMD_MISC_OPTIONS, opts.to_raw())
+            .await
     }
 
     // PinDetectOverride (EEh, word)
     pub async fn get_pin_detect_override(&mut self) -> Result<PinDetectOverride, BUS::Error> {
-        let raw = self.pmbus.raw_read_word(self.addr, CMD_PIN_DETECT_OVERRIDE).await?;
+        let raw = self
+            .pmbus
+            .raw_read_word(self.addr, CMD_PIN_DETECT_OVERRIDE)
+            .await?;
         Ok(PinDetectOverride::from_raw(raw))
     }
 
-    pub async fn set_pin_detect_override(&mut self, val: PinDetectOverride) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_word(self.addr, CMD_PIN_DETECT_OVERRIDE, val.to_raw()).await
+    pub async fn set_pin_detect_override(
+        &mut self,
+        val: PinDetectOverride,
+    ) -> Result<(), BUS::Error> {
+        self.pmbus
+            .raw_write_word(self.addr, CMD_PIN_DETECT_OVERRIDE, val.to_raw())
+            .await
     }
 
     // SlaveAddress (EFh, byte)
     pub async fn get_slave_address(&mut self) -> Result<u8, BUS::Error> {
-        let raw = self.pmbus.raw_read_byte(self.addr, CMD_SLAVE_ADDRESS).await?;
+        let raw = self
+            .pmbus
+            .raw_read_byte(self.addr, CMD_SLAVE_ADDRESS)
+            .await?;
         Ok(raw & 0x7F)
     }
 
     pub async fn set_slave_address(&mut self, addr: u8) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_byte(self.addr, CMD_SLAVE_ADDRESS, addr & 0x7F).await
+        self.pmbus
+            .raw_write_byte(self.addr, CMD_SLAVE_ADDRESS, addr & 0x7F)
+            .await
     }
 
     // NVM Checksum (F0h, word, read-only)
@@ -701,12 +779,17 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
 
     // SimulateFaults (F1h, word)
     pub async fn get_simulate_faults(&mut self) -> Result<SimulateFaults, BUS::Error> {
-        let raw = self.pmbus.raw_read_word(self.addr, CMD_SIMULATE_FAULTS).await?;
+        let raw = self
+            .pmbus
+            .raw_read_word(self.addr, CMD_SIMULATE_FAULTS)
+            .await?;
         Ok(SimulateFaults::from_raw(raw))
     }
 
     pub async fn set_simulate_faults(&mut self, val: SimulateFaults) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_word(self.addr, CMD_SIMULATE_FAULTS, val.to_raw()).await
+        self.pmbus
+            .raw_write_word(self.addr, CMD_SIMULATE_FAULTS, val.to_raw())
+            .await
     }
 
     // FusionID0 (FCh, word, read-only)
@@ -725,24 +808,40 @@ impl<BUS: I2c + 'static> Tps546<BUS> {
 
     // CompensationConfig (B1h, block 5B)
     pub async fn get_compensation_config(&mut self) -> Result<CompensationConfig, BUS::Error> {
-        let data = self.pmbus.raw_block_read(self.addr, CMD_COMPENSATION_CONFIG).await?;
+        let data = self
+            .pmbus
+            .raw_block_read(self.addr, CMD_COMPENSATION_CONFIG)
+            .await?;
         let mut buf = [0u8; 5];
         let len = data.len().min(5);
         buf[..len].copy_from_slice(&data[..len]);
         Ok(CompensationConfig::from_bytes(buf))
     }
 
-    pub async fn set_compensation_config(&mut self, cfg: CompensationConfig) -> Result<(), BUS::Error> {
-        self.pmbus.raw_block_write(self.addr, CMD_COMPENSATION_CONFIG, &cfg.to_bytes()).await
+    pub async fn set_compensation_config(
+        &mut self,
+        cfg: CompensationConfig,
+    ) -> Result<(), BUS::Error> {
+        self.pmbus
+            .raw_block_write(self.addr, CMD_COMPENSATION_CONFIG, &cfg.to_bytes())
+            .await
     }
 
     // PowerStageConfig (B5h, byte)
     pub async fn get_power_stage_config(&mut self) -> Result<PowerStageConfig, BUS::Error> {
-        let raw = self.pmbus.raw_read_byte(self.addr, CMD_POWER_STAGE_CONFIG).await?;
+        let raw = self
+            .pmbus
+            .raw_read_byte(self.addr, CMD_POWER_STAGE_CONFIG)
+            .await?;
         Ok(PowerStageConfig::from_raw(raw))
     }
 
-    pub async fn set_power_stage_config(&mut self, cfg: PowerStageConfig) -> Result<(), BUS::Error> {
-        self.pmbus.raw_write_byte(self.addr, CMD_POWER_STAGE_CONFIG, cfg.to_raw()).await
+    pub async fn set_power_stage_config(
+        &mut self,
+        cfg: PowerStageConfig,
+    ) -> Result<(), BUS::Error> {
+        self.pmbus
+            .raw_write_byte(self.addr, CMD_POWER_STAGE_CONFIG, cfg.to_raw())
+            .await
     }
 }

@@ -363,8 +363,7 @@ pub struct PinDetectOverride {
     raw_spare: u16,
 }
 
-const PDO_KNOWN_MASK: u16 =
-    (1 << 12) | (1 << 11) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 0);
+const PDO_KNOWN_MASK: u16 = (1 << 12) | (1 << 11) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 0);
 
 impl PinDetectOverride {
     pub fn from_raw(raw: u16) -> Self {
